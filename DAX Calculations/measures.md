@@ -9,72 +9,72 @@ This documentation provides a complete catalog of all DAX measures used in the H
 **Total Billing Amount**: The sum of all invoices generated for patient visits.
 
   * **Formula**: `SUM(fact_visits[Billing Amount])`
-  * **Format**: `0`
+  * **Format**: `\$#,0;(\$#,0);\$#,0`
 
 **Total Insurance Coverage**: Total amount covered by insurance providers.
 
   * **Formula**: `SUM(fact_visits[Insurance Coverage])`
-  * **Format**: `General`
+  * **Format**: `\$#,0;(\$#,0);\$#,0`
 
 **Total Out-of-Pocket**: Total amount paid directly by patients.
 
   * **Formula**: `SUM(fact_visits[Out-of-Pocket])`
-  * **Format**: `General`
+  * **Format**: `\$#,0;(\$#,0);\$#,0`
 
 **Total Medication Cost**: Total cost of medicines prescribed.
 
   * **Formula**: `SUM(fact_visits[Medication Cost])`
-  * **Format**: `0`
+  * **Format**: `\$#,0;(\$#,0);\$#,0`
 
 **Total Treatment Cost**: Total cost of medical procedures and treatments.
 
   * **Formula**: `SUM(fact_visits[Treatment Cost])`
-  * **Format**: `0`
+  * **Format**: `\$#,0;(\$#,0);\$#,0`
 
 **Total Room Charge**: Total revenue generated from room utilization.
 
   * **Formula**: `SUM(fact_visits[Room Charge])`
-  * **Format**: `0`
+  * **Format**: `\$#,0;(\$#,0);\$#,0`
 
 **Avg Billing Amount**: Average revenue per visit.
 
   * **Formula**: `AVERAGE(fact_visits[Billing Amount])`
-  * **Format**: `General`
+  * **Format**: `\$#,0;(\$#,0);\$#,0`
 
 **Avg Out-of-Pocket**: Average direct cost to the patient per visit.
 
   * **Formula**: `AVERAGE(fact_visits[Out-of-Pocket])`
-  * **Format**: `General`
+  * **Format**: `\$#,0;(\$#,0);\$#,0`
 
 **Avg Insurance Coverage**: Average amount covered by insurance per visit.
 
   * **Formula**: `AVERAGE(fact_visits[Insurance Coverage])`
-  * **Format**: `General`
+  * **Format**: `\$#,0;(\$#,0);\$#,0`
 
 **Avg Medication Cost**: Average cost of medication per visit.
 
   * **Formula**: `AVERAGE(fact_visits[Medication Cost])`
-  * **Format**: `General`
+  * **Format**: `\$#,0;(\$#,0);\$#,0`
 
 **Avg Treatment Cost**: Average cost of treatment per visit.
 
   * **Formula**: `AVERAGE(fact_visits[Treatment Cost])`
-  * **Format**: `General`
+  * **Format**: `\$#,0;(\$#,0);\$#,0`
 
 **Avg Room Charge**: Average room charge per admitted visit.
 
   * **Formula**: `AVERAGE(fact_visits[Room Charge])`
-  * **Format**: `General`
+  * **Format**: `\$#,0;(\$#,0);\$#,0`
 
 **Neg Insurance Coverage**: Helper measure for waterfall charts (negative value).
 
   * **Formula**: `- [Total Insurance Coverage]`
-  * **Format**: `General`
+  * **Format**: `\$#,0;(\$#,0);\$#,0`
 
 **Collection Rate**: Percentage of visits where payment status is pending.
 
   * **Formula**: `DIVIDE(CALCULATE([Total Visits], fact_visits[Payment Status]="Pending"),[Total Visits])`
-  * **Format**: `General`
+  * **Format**: `0.0%;-0.0%;0.0%`
 
 ---
 
@@ -83,57 +83,57 @@ This documentation provides a complete catalog of all DAX measures used in the H
 **Total Visits**: Total count of patient encounters.
 
   * **Formula**: `COUNT(fact_visits[Date of Visit])`
-  * **Format**: `0`
+  * **Format**: `#,0`
 
 **Total Patients**: Count of unique patients treated.
 
   * **Formula**: `DISTINCTCOUNT(fact_visits[Patient ID])`
-  * **Format**: `0`
+  * **Format**: `#,0`
 
 **Emergency Visits**: Count of visits flagged as emergencies.
 
   * **Formula**: `CALCULATE(COUNT(fact_visits[Emergency Visit]),fact_visits[Emergency Visit]="Yes")`
-  * **Format**: `0`
+  * **Format**: `#,0`
 
 **% Emergency Visit**: Percentage of total visits that were emergencies.
 
   * **Formula**: `DIVIDE([Emergency Visits],[Total Visits], "--")`
-  * **Format**: `General`
+  * **Format**: `0.0%;-0.0%;0.0%`
 
 **Admission Rate**: Ratio of admitted visits to total visits.
   
   * **Formula**: `DIVIDE(COUNTA(fact_visits[Admitted Date]), [Total Visits])`
-  * **Format**: `General`
+  * **Format**: `0.0%;-0.0%;0.0%`
 
 **Avg Lenght of Stay**: Average duration (in days) of hospital stay.
 
   * **Formula**: `AVERAGE(fact_visits[Lenght of Stay])`
-  * **Format**: `General`
+  * **Format**: `0.00d`
 
 **Avg Satisfaction Score**: Average patient feedback score.
 
   * **Formula**: `AVERAGE(fact_visits[Patient Satisfaction Score])`
-  * **Format**: `General`
+  * **Format**: `0.00`
 
 **Follow-up Visits**: Count of recorded follow-up appointments.
 
   * **Formula**: `COUNTA(fact_visits[Follow-Up Visit Date])`
-  * **Format**: `0`
+  * **Format**: `#,0`
 
 **Readmission**: Ratio of readmissions to total visits.
 
   * **Formula**: `DIVIDE(SUM(fact_visits[Readmission]), [Total Visits])`
-  * **Format**: `General`
+  * **Format**: `0.0%;-0.0%;0.0%`
 
 **Readmission Rate**: Ratio of follow-up dates to initial visit dates.
 
   * **Formula**: `DIVIDE(COUNTA(fact_visits[Follow-Up Visit Date]), COUNTA(fact_visits[Date of Visit]))`
-  * **Format**: `General`
+  * **Format**: `0.0%;-0.0%;0.0%`
 
 **Room Utilization**: Percentage of visits requiring room allocation.
 
   * **Formula**: `1-DIVIDE(CALCULATE([Total Visits], fact_visits[Room Type]="N/A"), [Total Visits])`
-  * **Format**: `General`
+  * **Format**: `0.0%;-0.0%;0.0%`
 
 ---
 
@@ -142,17 +142,17 @@ This documentation provides a complete catalog of all DAX measures used in the H
 **Insurance Coverage %**: Percentage of total billing covered by insurance.
 
   * **Formula**: `DIVIDE([Total Insurance Coverage], [Total Billing Amount], "--")`
-  * **Format**: `General`
+  * **Format**: `0.0%;-0.0%;0.0%`
 
 **Insured Patients%**: Percentage of unique patients with insurance coverage.
 
   * **Formula**: `1-DIVIDE(CALCULATE([Total Patients], ISBLANK(fact_visits[Insurance Coverage])), [Total Patients])`
-  * **Format**: `0`
+  * **Format**: `0.0%;-0.0%;0.0%`
 
 **Total Insured Patients**: Count of patients with valid insurance.
 
   * **Formula**: `[Total Patients]-CALCULATE([Total Patients], ISBLANK(fact_visits[Insurance Coverage]))`
-  * **Format**: `0`
+  * **Format**: `#,0`
 
 ---
 
@@ -161,12 +161,12 @@ This documentation provides a complete catalog of all DAX measures used in the H
 **Male Axis**: Count of male patients (Positive Axis).
 
   * **Formula**: `1 * CALCULATE([Total Patients], patients[Gender]="Male")`
-  * **Format**: `0`
+  * **Format**: `#,0`
 
 **Female Axis**: Count of female patients (Negative Axis for Tornado Charts).
 
   * **Formula**: `-1 * CALCULATE([Total Patients], patients[Gender]="Female")`
-  * **Format**: `0`
+  * **Format**: `#,0`
 
 **M%**: Formatted string for Male percentage label.
 
@@ -234,25 +234,25 @@ This documentation provides a complete catalog of all DAX measures used in the H
 
 **%Department**: Share of billing amount by Department.
 
-  * **Formula**: `FORMAT(DIVIDE([Total Billing Amount],CALCULATE([Total Billing Amount], ALL(department[Department]))), "0.0%")`
-  * **Format**: `General`
+  * **Formula**: `DIVIDE([Total Billing Amount],CALCULATE([Total Billing Amount], ALL(department[Department])))`
+  * **Format**: `0.0%;-0.0%;0.0%`
 
 **%Diagnosis**: Share of billing amount by Diagnosis.
 
-  * **Formula**: `FORMAT(DIVIDE([Total Billing Amount],CALCULATE([Total Billing Amount], ALL(diagnose[Diagnosis]))), "0.00%")`
-  * **Format**: `General`
+  * **Formula**: `DIVIDE([Total Billing Amount],CALCULATE([Total Billing Amount], ALL(diagnose[Diagnosis])))`
+  * **Format**: `0.0%;-0.0%;0.0%`
 
 **%Procedure**: Share of billing amount by Procedure.
 
-  * **Formula**: `FORMAT(DIVIDE([Total Billing Amount],CALCULATE([Total Billing Amount], ALL(procedures[Procedure]))), "0.0%")`
-  * **Format**: `General`
+  * **Formula**: `DIVIDE([Total Billing Amount],CALCULATE([Total Billing Amount], ALL(procedures[Procedure])))`
+  * **Format**: `0.0%;-0.0%;0.0%`
 
 **Month Label**: Dynamic axis title for Month slicers.
 
   * **Formula**:
   
   ```dax
-   IF(      ISFILTERED(date_table[Month Full Name]), "", "Month" )
+   IF( ISFILTERED(date_table[Month Full Name]), "", "Month" )
   ```
   
   * **Format**: `General`
@@ -262,7 +262,7 @@ This documentation provides a complete catalog of all DAX measures used in the H
   * **Formula**:
   
   ```dax
-   IF(      ISFILTERED(date_table[Year]), "", "Year" )
+   IF( ISFILTERED(date_table[Year]), "", "Year" )
   ```
   
   * **Format**: `General`
@@ -272,7 +272,7 @@ This documentation provides a complete catalog of all DAX measures used in the H
   * **Formula**:
   
   ```dax
-   IF(      ISFILTERED(procedures[Procedure]), "", "Procedure" )
+   IF( ISFILTERED(procedures[Procedure]), "", "Procedure" )
   ```
   
   * **Format**: `General`

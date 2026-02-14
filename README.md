@@ -1,4 +1,4 @@
-# Project Background: St. Jude Metropolitan's Operational Recovery
+# 📊 Project Background: St. Jude Metropolitan's Operational Recovery
 
 **St. Jude Metropolitan** is a leading multi-specialty hospital where clinical excellence must meet operational precision. In a high-stakes environment where "time is muscle," the hospital’s ability to deliver care was being compromised by systemic administrative friction and poor resource allocation.
 
@@ -6,14 +6,18 @@
 
 Insights and recommendations are provided on the following key areas:
 
-* **Category 1: Clinical Efficiency & Flow** (Admission Rates & Length of Stay)
-* **Category 2: Provider Performance Matrix** (Balancing Workload vs. Patient Satisfaction)
-* **Category 3: Financial Health & Insurance** (Revenue Drivers & Coverage Gaps)
-* **Category 4: Patient Demographics & Experience** (Understanding the "Who" and the "How")
+* **Clinical Efficiency & Flow** (Admission Rates & Length of Stay)
+* **Provider Performance Matrix** (Balancing Workload vs. Patient Satisfaction)
+* **Financial Health & Insurance** (Revenue Drivers & Coverage Gaps)
+* **Patient Demographics & Experience** (Understanding the "Who" and the "How")
 
-**DAX queries regarding various analytical calculations can be found here [[Link to Script]](https://www.google.com/search?q=%23).**
+https://github.com/user-attachments/assets/b2fe4367-6d76-445b-a165-d265c551c312
 
-**An interactive Power BI dashboard used to report and explore sales trends can be found here [[Link to Dashboard]](https://www.google.com/search?q=%23).**
+**PowerQuery M Code regarding data preparation process ovarious tables f can be found [[here]](https://github.com/mehedibhai101/Healthcare_Analytics_and_Operational_Efficiency/tree/main/Data%20Cleaning).**
+
+**DAX queries regarding various analytical calculations can be found [[here]](https://github.com/mehedibhai101/Healthcare_Analytics_and_Operational_Efficiency/tree/main/DAX%20Calculations).**
+
+**An interactive Power BI dashboard used to report and explore sales trends can be found [[here]](https://app.powerbi.com/view?r=eyJrIjoiMDk1Y2M2MmItNmVhOS00Y2EzLWFlZjctNjU5ZWM1N2IzYTE0IiwidCI6IjAwMGY1Mjk5LWU2YTUtNDYxNi1hNTI4LWJjZTNlNGUyYjk4ZCIsImMiOjEwfQ%3D%3D).**
 
 ---
 

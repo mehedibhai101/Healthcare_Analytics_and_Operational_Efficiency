@@ -1,6 +1,6 @@
 # 📊 Project Background: St. Jude Metropolitan's Operational Recovery
 
-**St. Jude Metropolitan** is a leading multi-specialty hospital where clinical excellence must meet operational precision. In a high-stakes environment where "time is muscle," the hospital’s ability to deliver care was being compromised by systemic administrative friction and poor resource allocation.
+**St. Jude Metropolitan** is a leading multi-specialty hospital in England where clinical excellence must meet operational precision. In a high-stakes environment where "time is muscle," the hospital’s ability to deliver care was being compromised by systemic administrative friction and poor resource allocation.
 
 **The mission was to spearhead a Strategic Operational Recovery.** St. Jude was grappling with a critical "Satisfaction Crisis," where an inequitable distribution of clinical labor caused the average patient satisfaction score to plummet to a dangerously low **3.84/10**. I was brought in to engineer a data-backed workload redistribution model, transforming 5,000 fragmented visit records into an actionable framework to eliminate clinician burnout and stabilize the hospital’s reputation.
 
@@ -53,7 +53,7 @@ The hospital manages a high-volume operation with **5,000 annual visits** and **
 * **Departmental "Heavy Lifters."** **Cardiology ($681K)** and **Orthopedics ($622K)** are the primary revenue engines, together accounting for over 40% of total treatment costs.
 * **Emergency vs. Elective.** Emergency visits account for **38.6%** of total traffic, demanding a flexible staffing model that can handle unpredictable surges.
 
-[**Visualization: Admission Rate Trend & Average Length of Stay by Dept**]
+<img width="885" height="376" alt="Image" src="https://github.com/user-attachments/assets/3839b77f-14e0-4a87-8fd3-5e4ceea19e0e" />
 
 ### 👨‍⚕️ Provider Performance Matrix
 
@@ -62,7 +62,7 @@ The hospital manages a high-volume operation with **5,000 annual visits** and **
 * **Specialist Satisfaction.** Specialists with lower patient volumes, like **Dr. Emma Jones** (467 visits) and **Dr. Johnson Grek** (445 visits), maintain high satisfaction scores (>4.8), suggesting that lower patient-to-doctor ratios yield better perceived care.
 * **Referral Patterns.** A significant portion of traffic comes from **Self-Referrals**, indicating a strong hospital brand, but also a need to strengthen the "Physician Referral" network for specialized cases.
 
-[**Visualization: Provider Volume vs. Satisfaction Scatter Plot**]
+<img width="626" height="376" alt="Image" src="https://github.com/user-attachments/assets/f09d280c-9dc5-48e6-96e9-1d8151a93f01" />
 
 ### 💳 Financial Health & Insurance
 
@@ -70,7 +70,7 @@ The hospital manages a high-volume operation with **5,000 annual visits** and **
 * **Payer Parity.** Insurance coverage is remarkably balanced across the three major providers: **Aviva ($751K)**, **AXA ($743K)**, and **Allianz ($731K)**. This lack of dependency on a single payer reduces financial risk.
 * **Out-of-Pocket Exposure.** A significant portion of billing remains "Pending" (38.3%), highlighting a potential cash flow bottleneck in the revenue cycle management (RCM) process.
 
-[**Visualization: Revenue by Department & Insurance Coverage Breakdown**]
+<img width="822" height="376" alt="Image" src="https://github.com/user-attachments/assets/5973c0f6-0fc1-49c4-b2c9-ce851b390ee8" />
 
 ### 👥 Patient Demographics & Experience
 
@@ -78,7 +78,7 @@ The hospital manages a high-volume operation with **5,000 annual visits** and **
 * **Satisfaction drivers.** The overall average satisfaction score is **3.84/10**, which is critically low for a healthcare institution. This is primarily dragged down by the high-volume/low-satisfaction performance of a single provider.
 * **Racial & Gender Diversity.** The patient population is diverse, requiring culturally competent care strategies, particularly in the high-traffic General Surgery and Orthopedics departments.
 
-[**Visualization: Patient Age Distribution & Satisfaction Score Trend**]
+<img width="626" height="463" alt="Image" src="https://github.com/user-attachments/assets/68247839-2987-4091-bb08-1cb9aac1ec00" />
 
 ---
 

@@ -104,7 +104,7 @@ The hospital manages a high-volume operation with **5,000 annual visits** and **
 ## 📂 Repository Structure
 
 ```
-Advanced_End-to-End_Retial_Analytics/
+Healthcare_Analytics_and_Operational_Efficiency/
 │
 ├── Dashboard/                             # Final visualization and reporting outputs
 │   ├── assets/                            # Visual elements used in reports (logos, icons, etc.)

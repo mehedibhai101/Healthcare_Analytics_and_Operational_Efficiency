@@ -17,7 +17,7 @@ https://github.com/user-attachments/assets/7c0d76e4-fccd-4d57-94b5-d6705a09fae1
 
 **DAX queries regarding various analytical calculations can be found [[here]](https://github.com/mehedibhai101/Healthcare_Analytics_and_Operational_Efficiency/tree/main/DAX%20Calculations).**
 
-**An interactive Power BI dashboard used to report and explore sales trends can be found [[here]](https://app.powerbi.com/view?r=eyJrIjoiMDk1Y2M2MmItNmVhOS00Y2EzLWFlZjctNjU5ZWM1N2IzYTE0IiwidCI6IjAwMGY1Mjk5LWU2YTUtNDYxNi1hNTI4LWJjZTNlNGUyYjk4ZCIsImMiOjEwfQ%3D%3D).**
+**An interactive Power BI dashboard used to report and explore analysis can be found [[here]](https://app.powerbi.com/view?r=eyJrIjoiMDk1Y2M2MmItNmVhOS00Y2EzLWFlZjctNjU5ZWM1N2IzYTE0IiwidCI6IjAwMGY1Mjk5LWU2YTUtNDYxNi1hNTI4LWJjZTNlNGUyYjk4ZCIsImMiOjEwfQ%3D%3D).**
 
 ---
 

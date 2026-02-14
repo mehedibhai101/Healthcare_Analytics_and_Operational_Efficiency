@@ -252,7 +252,7 @@ This documentation provides a complete catalog of all DAX measures used in the H
   * **Formula**:
   
   ```dax
-   IF(      ISFILTERED(date_table[Month Full Name]),      "",      "Month" )
+   IF(      ISFILTERED(date_table[Month Full Name]), "", "Month" )
   ```
   
   * **Format**: `General`
@@ -262,7 +262,7 @@ This documentation provides a complete catalog of all DAX measures used in the H
   * **Formula**:
   
   ```dax
-   IF(      ISFILTERED(date_table[Year]),      "",      "Year" )
+   IF(      ISFILTERED(date_table[Year]), "", "Year" )
   ```
   
   * **Format**: `General`
@@ -272,7 +272,7 @@ This documentation provides a complete catalog of all DAX measures used in the H
   * **Formula**:
   
   ```dax
-   IF(      ISFILTERED(procedures[Procedure]),      "",      "Procedure" )
+   IF(      ISFILTERED(procedures[Procedure]), "", "Procedure" )
   ```
   
   * **Format**: `General`

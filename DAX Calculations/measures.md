@@ -6,72 +6,72 @@ This documentation provides a complete catalog of all DAX measures used in the H
 
 ## 💰 Financial Performance
 
-**Total Billing Amount**: The sum of all invoices generated for patient visits.
+* **Total Billing Amount**: The sum of all invoices generated for patient visits.
 
   * **Formula**: `SUM(fact_visits[Billing Amount])`
   * **Format**: `\$#,0;(\$#,0);\$#,0`
 
-**Total Insurance Coverage**: Total amount covered by insurance providers.
+* **Total Insurance Coverage**: Total amount covered by insurance providers.
 
   * **Formula**: `SUM(fact_visits[Insurance Coverage])`
   * **Format**: `\$#,0;(\$#,0);\$#,0`
 
-**Total Out-of-Pocket**: Total amount paid directly by patients.
+* **Total Out-of-Pocket**: Total amount paid directly by patients.
 
   * **Formula**: `SUM(fact_visits[Out-of-Pocket])`
   * **Format**: `\$#,0;(\$#,0);\$#,0`
 
-**Total Medication Cost**: Total cost of medicines prescribed.
+* **Total Medication Cost**: Total cost of medicines prescribed.
 
   * **Formula**: `SUM(fact_visits[Medication Cost])`
   * **Format**: `\$#,0;(\$#,0);\$#,0`
 
-**Total Treatment Cost**: Total cost of medical procedures and treatments.
+* **Total Treatment Cost**: Total cost of medical procedures and treatments.
 
   * **Formula**: `SUM(fact_visits[Treatment Cost])`
   * **Format**: `\$#,0;(\$#,0);\$#,0`
 
-**Total Room Charge**: Total revenue generated from room utilization.
+* **Total Room Charge**: Total revenue generated from room utilization.
 
   * **Formula**: `SUM(fact_visits[Room Charge])`
   * **Format**: `\$#,0;(\$#,0);\$#,0`
 
-**Avg Billing Amount**: Average revenue per visit.
+* **Avg Billing Amount**: Average revenue per visit.
 
   * **Formula**: `AVERAGE(fact_visits[Billing Amount])`
   * **Format**: `\$#,0;(\$#,0);\$#,0`
 
-**Avg Out-of-Pocket**: Average direct cost to the patient per visit.
+* **Avg Out-of-Pocket**: Average direct cost to the patient per visit.
 
   * **Formula**: `AVERAGE(fact_visits[Out-of-Pocket])`
   * **Format**: `\$#,0;(\$#,0);\$#,0`
 
-**Avg Insurance Coverage**: Average amount covered by insurance per visit.
+* **Avg Insurance Coverage**: Average amount covered by insurance per visit.
 
   * **Formula**: `AVERAGE(fact_visits[Insurance Coverage])`
   * **Format**: `\$#,0;(\$#,0);\$#,0`
 
-**Avg Medication Cost**: Average cost of medication per visit.
+* **Avg Medication Cost**: Average cost of medication per visit.
 
   * **Formula**: `AVERAGE(fact_visits[Medication Cost])`
   * **Format**: `\$#,0;(\$#,0);\$#,0`
 
-**Avg Treatment Cost**: Average cost of treatment per visit.
+* **Avg Treatment Cost**: Average cost of treatment per visit.
 
   * **Formula**: `AVERAGE(fact_visits[Treatment Cost])`
   * **Format**: `\$#,0;(\$#,0);\$#,0`
 
-**Avg Room Charge**: Average room charge per admitted visit.
+* **Avg Room Charge**: Average room charge per admitted visit.
 
   * **Formula**: `AVERAGE(fact_visits[Room Charge])`
   * **Format**: `\$#,0;(\$#,0);\$#,0`
 
-**Neg Insurance Coverage**: Helper measure for waterfall charts (negative value).
+* **Neg Insurance Coverage**: Helper measure for waterfall charts (negative value).
 
   * **Formula**: `- [Total Insurance Coverage]`
   * **Format**: `\$#,0;(\$#,0);\$#,0`
 
-**Collection Rate**: Percentage of visits where payment status is pending.
+* **Collection Rate**: Percentage of visits where payment status is pending.
 
   * **Formula**: `DIVIDE(CALCULATE([Total Visits], fact_visits[Payment Status]="Pending"),[Total Visits])`
   * **Format**: `0.0%;-0.0%;0.0%`
@@ -80,57 +80,57 @@ This documentation provides a complete catalog of all DAX measures used in the H
 
 ## 🏥 Visits & Operational Metrics
 
-**Total Visits**: Total count of patient encounters.
+* **Total Visits**: Total count of patient encounters.
 
   * **Formula**: `COUNT(fact_visits[Date of Visit])`
   * **Format**: `#,0`
 
-**Total Patients**: Count of unique patients treated.
+* **Total Patients**: Count of unique patients treated.
 
   * **Formula**: `DISTINCTCOUNT(fact_visits[Patient ID])`
   * **Format**: `#,0`
 
-**Emergency Visits**: Count of visits flagged as emergencies.
+* **Emergency Visits**: Count of visits flagged as emergencies.
 
   * **Formula**: `CALCULATE(COUNT(fact_visits[Emergency Visit]),fact_visits[Emergency Visit]="Yes")`
   * **Format**: `#,0`
 
-**% Emergency Visit**: Percentage of total visits that were emergencies.
+* **% Emergency Visit**: Percentage of total visits that were emergencies.
 
   * **Formula**: `DIVIDE([Emergency Visits],[Total Visits], "--")`
   * **Format**: `0.0%;-0.0%;0.0%`
 
-**Admission Rate**: Ratio of admitted visits to total visits.
+* **Admission Rate**: Ratio of admitted visits to total visits.
   
   * **Formula**: `DIVIDE(COUNTA(fact_visits[Admitted Date]), [Total Visits])`
   * **Format**: `0.0%;-0.0%;0.0%`
 
-**Avg Lenght of Stay**: Average duration (in days) of hospital stay.
+* **Avg Lenght of Stay**: Average duration (in days) of hospital stay.
 
   * **Formula**: `AVERAGE(fact_visits[Lenght of Stay])`
   * **Format**: `0.00d`
 
-**Avg Satisfaction Score**: Average patient feedback score.
+* **Avg Satisfaction Score**: Average patient feedback score.
 
   * **Formula**: `AVERAGE(fact_visits[Patient Satisfaction Score])`
   * **Format**: `0.00`
 
-**Follow-up Visits**: Count of recorded follow-up appointments.
+* **Follow-up Visits**: Count of recorded follow-up appointments.
 
   * **Formula**: `COUNTA(fact_visits[Follow-Up Visit Date])`
   * **Format**: `#,0`
 
-**Readmission**: Ratio of readmissions to total visits.
+* **Readmission**: Ratio of readmissions to total visits.
 
   * **Formula**: `DIVIDE(SUM(fact_visits[Readmission]), [Total Visits])`
   * **Format**: `0.0%;-0.0%;0.0%`
 
-**Readmission Rate**: Ratio of follow-up dates to initial visit dates.
+* **Readmission Rate**: Ratio of follow-up dates to initial visit dates.
 
   * **Formula**: `DIVIDE(COUNTA(fact_visits[Follow-Up Visit Date]), COUNTA(fact_visits[Date of Visit]))`
   * **Format**: `0.0%;-0.0%;0.0%`
 
-**Room Utilization**: Percentage of visits requiring room allocation.
+* **Room Utilization**: Percentage of visits requiring room allocation.
 
   * **Formula**: `1-DIVIDE(CALCULATE([Total Visits], fact_visits[Room Type]="N/A"), [Total Visits])`
   * **Format**: `0.0%;-0.0%;0.0%`
@@ -139,17 +139,17 @@ This documentation provides a complete catalog of all DAX measures used in the H
 
 ## 🛡️ Insurance & Coverage Analysis
 
-**Insurance Coverage %**: Percentage of total billing covered by insurance.
+* **Insurance Coverage %**: Percentage of total billing covered by insurance.
 
   * **Formula**: `DIVIDE([Total Insurance Coverage], [Total Billing Amount], "--")`
   * **Format**: `0.0%;-0.0%;0.0%`
 
-**Insured Patients%**: Percentage of unique patients with insurance coverage.
+* **Insured Patients%**: Percentage of unique patients with insurance coverage.
 
   * **Formula**: `1-DIVIDE(CALCULATE([Total Patients], ISBLANK(fact_visits[Insurance Coverage])), [Total Patients])`
   * **Format**: `0.0%;-0.0%;0.0%`
 
-**Total Insured Patients**: Count of patients with valid insurance.
+* **Total Insured Patients**: Count of patients with valid insurance.
 
   * **Formula**: `[Total Patients]-CALCULATE([Total Patients], ISBLANK(fact_visits[Insurance Coverage]))`
   * **Format**: `#,0`
@@ -158,17 +158,17 @@ This documentation provides a complete catalog of all DAX measures used in the H
 
 ## 👥 Demographics & Distribution (Formatting)
 
-**Male Axis**: Count of male patients (Positive Axis).
+* **Male Axis**: Count of male patients (Positive Axis).
 
   * **Formula**: `1 * CALCULATE([Total Patients], patients[Gender]="Male")`
   * **Format**: `#,0`
 
-**Female Axis**: Count of female patients (Negative Axis for Tornado Charts).
+* **Female Axis**: Count of female patients (Negative Axis for Tornado Charts).
 
   * **Formula**: `-1 * CALCULATE([Total Patients], patients[Gender]="Female")`
   * **Format**: `#,0`
 
-**M%**: Formatted string for Male percentage label.
+* **M%**: Formatted string for Male percentage label.
 
   * **Formula**:
   
@@ -178,7 +178,7 @@ This documentation provides a complete catalog of all DAX measures used in the H
   
   * **Format**: `General`
 
-**F%**: Formatted string for Female percentage label.
+* **F%**: Formatted string for Female percentage label.
 
   * **Formula**:
   
@@ -188,7 +188,7 @@ This documentation provides a complete catalog of all DAX measures used in the H
   
   * **Format**: `General`
 
-**Scotland%**: Dynamic Label for Scotland patient share.
+* **Scotland%**: Dynamic Label for Scotland patient share.
 
   * **Formula**:
   
@@ -198,7 +198,7 @@ This documentation provides a complete catalog of all DAX measures used in the H
   
   * **Format**: `General`
 
-**England%**: Dynamic Label for England patient share.
+* **England%**: Dynamic Label for England patient share.
 
   * **Formula**:
   
@@ -208,7 +208,7 @@ This documentation provides a complete catalog of all DAX measures used in the H
   
   * **Format**: `General`
 
-**Wales%**: Dynamic Label for Wales patient share.
+* **Wales%**: Dynamic Label for Wales patient share.
 
   * **Formula**:
   
@@ -218,7 +218,7 @@ This documentation provides a complete catalog of all DAX measures used in the H
   
   * **Format**: `General`
 
-**N. Ireland%**: Dynamic Label for Northern Ireland patient share.
+* **N. Ireland%**: Dynamic Label for Northern Ireland patient share.
 
   * **Formula**:
   
@@ -232,22 +232,22 @@ This documentation provides a complete catalog of all DAX measures used in the H
 
 ## 🏷️ Dynamic Labels & Text Formats
 
-**%Department**: Share of billing amount by Department.
+* **%Department**: Share of billing amount by Department.
 
   * **Formula**: `DIVIDE([Total Billing Amount],CALCULATE([Total Billing Amount], ALL(department[Department])))`
   * **Format**: `0.0%;-0.0%;0.0%`
 
-**%Diagnosis**: Share of billing amount by Diagnosis.
+* **%Diagnosis**: Share of billing amount by Diagnosis.
 
   * **Formula**: `DIVIDE([Total Billing Amount],CALCULATE([Total Billing Amount], ALL(diagnose[Diagnosis])))`
   * **Format**: `0.0%;-0.0%;0.0%`
 
-**%Procedure**: Share of billing amount by Procedure.
+* **%Procedure**: Share of billing amount by Procedure.
 
   * **Formula**: `DIVIDE([Total Billing Amount],CALCULATE([Total Billing Amount], ALL(procedures[Procedure])))`
   * **Format**: `0.0%;-0.0%;0.0%`
 
-**Month Label**: Dynamic axis title for Month slicers.
+* **Month Label**: Dynamic axis title for Month slicers.
 
   * **Formula**:
   
@@ -257,7 +257,7 @@ This documentation provides a complete catalog of all DAX measures used in the H
   
   * **Format**: `General`
 
-**Year Label**: Dynamic axis title for Year slicers.
+* **Year Label**: Dynamic axis title for Year slicers.
 
   * **Formula**:
   
@@ -267,7 +267,7 @@ This documentation provides a complete catalog of all DAX measures used in the H
   
   * **Format**: `General`
 
-**Procedure Label**: Dynamic axis title for Procedure slicers.
+* **Procedure Label**: Dynamic axis title for Procedure slicers.
 
   * **Formula**:
   
@@ -277,7 +277,7 @@ This documentation provides a complete catalog of all DAX measures used in the H
   
   * **Format**: `General`
 
-**Active Dept**: Returns the currently selected department name.
+* **Active Dept**: Returns the currently selected department name.
 
   * **Formula**: `SELECTEDVALUE(department[Department])`
   * **Format**: `General`
@@ -286,10 +286,10 @@ This documentation provides a complete catalog of all DAX measures used in the H
 
 **🧠 Explanation of Complex Logics**
 
-**Demographic Tornado Charting**: The `Male Axis` and `Female Axis` measures are designed specifically for a "Population Pyramid" or "Tornado" chart. By multiplying the Female count by -1, we force the bar chart to extend to the left of the zero axis, while the Male count (multiplied by 1) extends to the right. This creates a mirrored visual comparison without requiring complex custom visuals.
+* **Demographic Tornado Charting**: The `Male Axis` and `Female Axis` measures are designed specifically for a "Population Pyramid" or "Tornado" chart. By multiplying the Female count by -1, we force the bar chart to extend to the left of the zero axis, while the Male count (multiplied by 1) extends to the right. This creates a mirrored visual comparison without requiring complex custom visuals.
 
-**Dynamic Geographic Labels**: Measures like `Scotland%` and `England%` use `UNICHAR(10)` to insert a line break directly into the data label. This allows the visual to display the Region Name on the top line and the calculated Percentage on the bottom line within a single text element, keeping the dashboard clean and space-efficient.
+* **Dynamic Geographic Labels**: Measures like `Scotland%` and `England%` use `UNICHAR(10)` to insert a line break directly into the data label. This allows the visual to display the Region Name on the top line and the calculated Percentage on the bottom line within a single text element, keeping the dashboard clean and space-efficient.
 
-**Inverse Logic for Utilization**: The `Room Utilization` and `Insured Patients%` measures calculate their values by subtraction (1 - Non-Utilized/Uninsured). This "Inverse Logic" is often faster and cleaner than filtering for the positive case, especially when the "Null" or "N/A" condition (e.g., `Room Type="N/A"`) is easier to isolate than listing all possible valid room types.
+* **Inverse Logic for Utilization**: The `Room Utilization` and `Insured Patients%` measures calculate their values by subtraction (1 - Non-Utilized/Uninsured). This "Inverse Logic" is often faster and cleaner than filtering for the positive case, especially when the "Null" or "N/A" condition (e.g., `Room Type="N/A"`) is easier to isolate than listing all possible valid room types.
 
 **Context-Aware Titles**: The `Month Label` and `Year Label` measures use `ISFILTERED`. This is a UI/UX trick. When a user selects a specific month, the axis title disappears (returns `""`) to reduce clutter, as the context is obvious. When no filter is applied, it reappears to guide the user.
